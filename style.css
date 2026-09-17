@@ -205,8 +205,9 @@
         .about-copy > p { margin: 0 0 40px; font-size: 1.35rem; line-height: 1.35; letter-spacing: -.04em; }
         .details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding-top: 25px; border-top: 1px solid var(--line); }
         .details p { margin: 7px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.6; }
-        .philosophy-note { margin-top: 38px; padding: 22px 24px; border-left: 3px solid var(--cyan); background: rgba(0, 207, 232, .08); }
+        .philosophy-note { margin-top: 38px; padding: 22px 24px; border-left: 3px solid var(--cyan); background: rgba(0, 207, 232, .08); text-align: center; }
         .philosophy-note blockquote { margin: 0; font-size: 1.05rem; line-height: 1.45; letter-spacing: -.02em; }
+        .philosophy-note blockquote:nth-of-type(2) { margin-top: 24px; }
         .philosophy-note cite { display: block; margin-top: 12px; color: var(--muted); font: .68rem var(--mono); font-style: normal; text-transform: uppercase; }
 
         .contact { position: relative; overflow: hidden; padding: 82px 0 90px; color: var(--white); background: var(--blue); }
