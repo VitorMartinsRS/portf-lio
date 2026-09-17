@@ -28,9 +28,8 @@
         <span class="tech-object tech-pyramid"></span>
     </div>
     <header class="shell topbar">
-        <a class="mark" href="#top">VM<span>.</span></a>
+        <a class="mark" href="#top">Vitor Martins<span>.</span></a>
         <nav class="nav" aria-label="Navegação principal">
-            <a href="#trabalho">Trabalho</a>
             <a href="#sobre">Sobre</a>
             <a class="nav-whatsapp" href="https://wa.me/5581992710955" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
             <a class="nav-github" href="https://github.com/VitorMartinsRS" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -42,7 +41,7 @@
     <main id="top">
         <section class="shell hero">
             <div>
-                <div class="eyebrow">Engenheiro da computação / Desenvolvedor web</div>
+                <div class="eyebrow">Engenheiro da computação / Programador</div>
                 <h1>Código que<br>ganha <em>vida.</em></h1>
             </div>
             <div class="hero-aside">
@@ -57,23 +56,33 @@
                 <h2>Projetos selecionados</h2>
                 <span class="label">01 — 04 / provisórios</span>
             </div>
-            <div class="project-grid">
-                <a class="project" href="#contato">
-                    <div class="project-image"><img src="" alt="Componentes e protótipo de um sistema de automação" loading="lazy"><span class="project-tag">Hardware</span></div>
-                    <div class="project-meta"><div><h3>* Sistema de automação</h3><p>Hardware & programação C</p></div><span class="project-year">2024</span></div>
-                </a>
-                <a class="project" href="#contato">
-                    <div class="project-image"><img src="" alt="Computador exibido uma aplicação desenvolvida em Java" loading="lazy"><span class="project-tag">Software</span></div>
-                    <div class="project-meta"><div><h3>* Plataforma em Java</h3><p>Programação orientada a objetos</p></div><span class="project-year">2024</span></div>
-                </a>
-                <a class="project" href="#contato">
-                    <div class="project-image"><img src="" alt="Dispositivo conectado para um projeto de Internet das Coisas" loading="lazy"><span class="project-tag">IoT</span></div>
-                    <div class="project-meta"><div><h3>* Monitor IoT</h3><p>Sistemas embarcados & Internet das Coisas</p></div><span class="project-year">2023</span></div>
-                </a>
-                <a class="project" href="#contato">
-                    <div class="project-image"><img src="" alt="Estação de trabalho para desenvolvimento em Python" loading="lazy"><span class="project-tag">Python</span></div>
-                    <div class="project-meta"><div><h3>* Análise de dados</h3><p>Automação com Python</p></div><span class="project-year">2023</span></div>
-                </a>
+            <div class="project-carousels">
+                <section class="theme-carousel theme-carousel--featured" data-carousel aria-labelledby="themes-title">
+                    <h3 id="themes-title" class="theme-carousel-title">Projetos</h3>
+                    <div class="project-grid" data-carousel-track>
+                        <a class="project" href="#contato">
+                            <div class="project-image"><img src="images/web-interface.svg" alt="Interface web responsiva"><span class="project-tag">Web Developer</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Web Developer</span><h4>Interface responsiva</h4><p>Desenvolvimento web e experiência do usuário</p></div><span class="project-year">2024</span></div>
+                        </a>
+                        <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="images/dashboard.svg" alt="Dashboard de automação"><span class="project-tag">Hardware</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Hardware</span><h4>Sistema de automação</h4><p>Integração eletrônica e sistemas embarcados</p></div><span class="project-year">2025</span></div>
+                        </a>
+                        <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="images/mobile-layout.svg" alt="Interface de plataforma de software"><span class="project-tag">Software</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Software</span><h4>Plataforma em Java</h4><p>Programação orientada a objetos</p></div><span class="project-year">2025</span></div>
+                        </a>
+                        <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="images/python-gui.svg" alt="Programa feito em Python com interface gráfica"><span class="project-tag">Python</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Python</span><h4>Programa com interface gráfica</h4><p>Aplicação desktop desenvolvida em Python</p></div><span class="project-year">2026</span></div>
+                        </a>
+                    </div>
+                    <div class="carousel-controls" aria-label="Controles dos projetos">
+                        <button class="carousel-button" type="button" data-carousel-prev aria-label="Projeto anterior">←</button>
+                        <div class="carousel-dots" data-carousel-dots></div>
+                        <button class="carousel-button" type="button" data-carousel-next aria-label="Próximo projeto">→</button>
+                    </div>
+                </section>
             </div>
         </section>
 
@@ -105,10 +114,12 @@
         <span>© 2026 Vitor Martins</span>
         <div class="socials"><a class="social-link--featured" href="https://github.com/VitorMartinsRS" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="social-link--featured" href="https://www.linkedin.com/in/vitormartinsrs" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
     </footer>
+    <button class="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo" hidden>↑</button>
     <script>
         const themeToggle = document.querySelector('.theme-toggle');
         const themeIcon = themeToggle.querySelector('span');
         const root = document.documentElement;
+        const backToTop = document.querySelector('.back-to-top');
 
         function setTheme(theme) {
             const isDark = theme === 'dark';
@@ -125,6 +136,75 @@
             const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
             localStorage.setItem('portfolio-theme', nextTheme);
             setTheme(nextTheme);
+        });
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        window.addEventListener('scroll', () => {
+            backToTop.hidden = window.scrollY <= 120;
+        }, { passive: true });
+
+        document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+            const track = carousel.querySelector('[data-carousel-track]');
+            const slides = [...track.children];
+            const dots = carousel.querySelector('[data-carousel-dots]');
+            let currentSlide = 0;
+
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot';
+                dot.setAttribute('aria-label', `Ir para o projeto ${index + 1}`);
+                dot.addEventListener('click', () => goToSlide(index));
+                dots.append(dot);
+            });
+
+            function goToSlide(index) {
+                currentSlide = (index + slides.length) % slides.length;
+                track.scrollTo({
+                    left: slides[currentSlide].offsetLeft,
+                    behavior: 'smooth'
+                });
+                updateControls();
+            }
+
+            function updateControls() {
+                dots.querySelectorAll('.carousel-dot').forEach((dot, dotIndex) => {
+                    dot.classList.toggle('is-active', dotIndex === currentSlide);
+                });
+            }
+
+            track.addEventListener('scroll', () => {
+                const nearestSlide = slides.reduce((nearest, slide, index) => {
+                    const distance = Math.abs(track.scrollLeft - slide.offsetLeft);
+                    return distance < nearest.distance ? { index, distance } : nearest;
+                }, { index: 0, distance: Infinity });
+
+                if (nearestSlide.index !== currentSlide) {
+                    currentSlide = nearestSlide.index;
+                    updateControls();
+                }
+            }, { passive: true });
+
+            carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => goToSlide(currentSlide - 1));
+            carousel.querySelector('[data-carousel-next]').addEventListener('click', () => goToSlide(currentSlide + 1));
+            goToSlide(0);
+
+            let autoplay;
+            const startAutoplay = () => {
+                stopAutoplay();
+                autoplay = window.setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, 5000);
+            };
+            const stopAutoplay = () => window.clearInterval(autoplay);
+
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('focusin', stopAutoplay);
+            carousel.addEventListener('focusout', (event) => {
+                if (!carousel.contains(event.relatedTarget)) startAutoplay();
+            });
+            startAutoplay();
         });
     </script>
 </body>
