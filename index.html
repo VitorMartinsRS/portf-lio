@@ -54,27 +54,43 @@
         <section class="shell work-section" id="trabalho">
             <div class="section-head">
                 <h2>Projetos selecionados</h2>
-                <span class="label">01 — 04 / provisórios</span>
+                <span class="label">01 — 04 </span>
             </div>
             <div class="project-carousels">
                 <section class="theme-carousel theme-carousel--featured" data-carousel aria-labelledby="themes-title">
                     <h3 id="themes-title" class="theme-carousel-title">Projetos</h3>
                     <div class="project-grid" data-carousel-track>
                         <a class="project" href="#contato">
-                            <div class="project-image"><img src="images/web-interface.svg" alt="Interface web responsiva"><span class="project-tag">Web Developer</span></div>
+                            <div class="project-image"><img src="" alt="Interface web responsiva"><span class="project-tag">Web Developer</span></div>
                             <div class="project-meta"><div><span class="project-theme">Web Developer</span><h4>Interface responsiva</h4><p>Desenvolvimento web e experiência do usuário</p></div><span class="project-year">2024</span></div>
                         </a>
                         <a class="project project-slot" href="#contato">
-                            <div class="project-image"><img src="images/dashboard.svg" alt="Dashboard de automação"><span class="project-tag">Hardware</span></div>
+                            <div class="project-image"><img src="imagem/" alt="Dashboard web"><span class="project-tag">Hardware</span></div>
                             <div class="project-meta"><div><span class="project-theme">Hardware</span><h4>Sistema de automação</h4><p>Integração eletrônica e sistemas embarcados</p></div><span class="project-year">2025</span></div>
                         </a>
                         <a class="project project-slot" href="#contato">
-                            <div class="project-image"><img src="images/mobile-layout.svg" alt="Interface de plataforma de software"><span class="project-tag">Software</span></div>
+                            <div class="project-image"><img src="imagem/" alt="Plataforma web"><span class="project-tag">Software</span></div>
                             <div class="project-meta"><div><span class="project-theme">Software</span><h4>Plataforma em Java</h4><p>Programação orientada a objetos</p></div><span class="project-year">2025</span></div>
                         </a>
                         <a class="project project-slot" href="#contato">
-                            <div class="project-image"><img src="images/python-gui.svg" alt="Programa feito em Python com interface gráfica"><span class="project-tag">Python</span></div>
+                            <div class="project-image"><img src="imagem/programapython2.png" alt="Programa feito em Python com interface gráfica"><span class="project-tag">Python</span></div>
                             <div class="project-meta"><div><span class="project-theme">Python</span><h4>Programa com interface gráfica</h4><p>Aplicação desktop desenvolvida em Python</p></div><span class="project-year">2026</span></div>
+                        </a>
+                         <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="imagem/programapython.png" alt="Programa em Python com interface gráfica"><span class="project-tag">Python</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Python</span><h4>Python GUI</h4><p>Interface gráfica para software desktop</p></div><span class="project-year">2026</span></div>
+                        </a>
+                        <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="imagem/web4.png" alt="Portfolio web"><span class="project-tag">Web Developer</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Web Developer</span><h4>Aba do site</h4><p>Identidade digital e apresentação visual</p></div><span class="project-year">2026</span></div>
+                        </a>                      
+                        <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="imagem/web1.png" alt="Landing page web"><span class="project-tag">Web Developer</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Web Developer</span><h4>Landing page</h4><p>Estrutura visual e conversão</p></div><span class="project-year">2026</span></div>
+                        </a>
+                        <a class="project project-slot" href="#contato">
+                            <div class="project-image"><img src="imagem/web2.png" alt="Dashboard web de gestão"><span class="project-tag">Web Developer</span></div>
+                            <div class="project-meta"><div><span class="project-theme">Web Developer</span><h4>Dashboard</h4><p>Gestão compartilhada e UX clara</p></div><span class="project-year">2026</span></div>
                         </a>
                     </div>
                     <div class="carousel-controls" aria-label="Controles dos projetos">
@@ -160,12 +176,18 @@
 
             function goToSlide(index) {
                 currentSlide = (index + slides.length) % slides.length;
+                const slide = slides[currentSlide];
+                if (!slide) return;
                 track.scrollTo({
-                    left: slides[currentSlide].offsetLeft,
+                    left: slide.offsetLeft,
                     behavior: 'smooth'
                 });
                 updateControls();
             }
+
+            window.addEventListener('resize', () => {
+                goToSlide(currentSlide);
+            });
 
             function updateControls() {
                 dots.querySelectorAll('.carousel-dot').forEach((dot, dotIndex) => {
